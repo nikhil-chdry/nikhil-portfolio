@@ -84,7 +84,7 @@ const PROJECTS = [
     desc: "Full-stack e-commerce processing 10,000+ products with a content-based recommendation engine using cosine similarity.",
     stack: ["React", "Python", "FastAPI", "Pandas"],
     github: "https://github.com/nikhil-chdry",
-    live: "#",
+    live: "https://smart-shop-platform-aaph.vercel.app/",
     gradient: "from-[#7FC6E8] to-[#C7E6F7]",
     emoji: "🛒",
   },
@@ -93,7 +93,7 @@ const PROJECTS = [
     desc: "Business platform for a water treatment company managing RO plants, coolers and AMC services. Secure JWT auth.",
     stack: ["React", "Node", "Express", "MongoDB", "JWT"],
     github: "https://github.com/nikhil-chdry",
-    live: "#",
+    live: "https://water-amc-green.vercel.app/",
     gradient: "from-[#A9DCF1] to-[#E6F4FC]",
     emoji: "💧",
   },
@@ -116,38 +116,26 @@ const PROJECTS = [
     emoji: "🔋",
   },
   {
-    title: "AI Chat Assistant (MERN)",
-    desc: "Full-stack MERN app with OpenAI-style streaming chat, JWT auth, conversation history and prompt templates.",
-    stack: ["MongoDB", "Express", "React", "Node"],
+    title: "Razor Pay Site Clone",
+    desc: "Frontend clone of the Razor Pay website with responsive design and interactive elements using Tailwind CSS.",
+    stack: [ "HTML", "Tailwind CSS"],
     github: "https://github.com/nikhil-chdry",
     live: "#",
     gradient: "from-[#A9DCF1] to-[#C7E6F7]",
-    emoji: "🤖",
+    emoji: "💳",
   },
 ];
 
 const CERTIFICATES = [
   {
-    title: "Full-Stack Web Development",
-    org: "Coursera",
-    date: "2024",
+    title: "Machine Learning & Deep Learning Bootcamp in Python",
+    org: "UDEMY",
+    date: "2026",
     emoji: "🎓",
   },
   {
-    title: "Machine Learning Specialization",
-    org: "DeepLearning.AI",
-    date: "2024",
-    emoji: "🧠",
-  },
-  {
-    title: "MongoDB for Developers",
-    org: "MongoDB University",
-    date: "2024",
-    emoji: "🍃",
-  },
-  {
     title: "Problem Solving (Intermediate)",
-    org: "HackerRank",
+    org: "Leetcode",
     date: "2023",
     emoji: "💻",
   },
@@ -160,9 +148,9 @@ const CERTIFICATES = [
 ];
 
 const ACHIEVEMENTS = [
-  { value: 15, label: "Projects Built", icon: Rocket },
-  { value: 350, label: "DSA Problems Solved", icon: Code2 },
-  { value: 8, label: "Certifications", icon: Award },
+  { value: 6, label: "Projects Built", icon: Rocket },
+  { value: 200, label: "DSA Problems Solved", icon: Code2 },
+  { value: 2, label: "Certifications", icon: Award },
   { value: 12, label: "Technologies", icon: Sparkles },
 ];
 
@@ -373,8 +361,7 @@ function Hero() {
           </motion.div>
 
           <h1
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05]"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] archivo-black-regular"
           >
             <span className="block text-[#1e3a5f]">Hi, I'm</span>
             <span className="block text-gradient">Nikhil Sunda</span>
@@ -384,8 +371,8 @@ function Hero() {
             Full-Stack Developer · MERN Stack · AI Enthusiast
           </p>
           <p className="mt-4 max-w-xl text-[#1e3a5f]/70 leading-relaxed">
-            Final-year B.Tech student at IIIT Bhubaneswar, building thoughtful,
-            scalable products at the intersection of web engineering and AI.
+           Final-year B.Tech student at IIIT Bhubaneswar, passionate about transforming ideas into production-grade software through full-stack development,
+            AI/ML engineering, and modern backend architectures, with experience in building recommendation systems, business platforms, and intelligent applications.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -453,17 +440,8 @@ function Hero() {
               <img
                 src="/profile.jpg"
                 alt="Nikhil Sunda"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                }}
                 className="w-full h-full object-cover"
               />
-              <div
-                className="absolute inset-0 grid place-items-center text-7xl font-bold text-white/90"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-              >
-                NS
-              </div>
             </div>
 
             {/* floating chips */}
@@ -517,8 +495,7 @@ function SectionHeader({
         {kicker}
       </p>
       <h2
-        className="text-3xl md:text-5xl font-extrabold text-[#1e3a5f] tracking-tight"
-        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+        className="text-3xl md:text-5xl font-extrabold text-[#1e3a5f] tracking-tight archivo-black-regular"
       >
         {title}
       </h2>
@@ -899,8 +876,7 @@ function Achievements() {
                 <a.icon className="w-5 h-5" />
               </div>
               <p
-                className="text-4xl font-extrabold text-gradient"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                className="text-4xl font-extrabold text-gradient archivo-black-regular"
               >
                 <Counter to={a.value} />
               </p>

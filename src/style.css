@@ -40,6 +40,18 @@
   --card-foreground: oklch(0.18 0.04 250);
 }
 
+.rubik-dirt-regular {
+  font-family: "Rubik Dirt", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.archivo-black-regular {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -63,10 +75,10 @@
   overflow: hidden;
   background: linear-gradient(
     180deg,
-    #7fc6e8 0%,
-    #a9dcf1 35%,
-    #c7e6f7 70%,
-    #e6f4fc 100%
+    #D39D5F 0%,
+    #DDA969 35%,
+    #E8B880 70%,
+    #F0C9A0 100%
   );
 }
 
