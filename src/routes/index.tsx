@@ -172,9 +172,9 @@ const PROFILES = [
   {
     name: "LeetCode",
     handle: "@nikhilsunda",
-    url: "https://leetcode.com/",
+    url: "https://leetcode.com/u/nikhil_sunda_skr/",
     icon: Trophy,
-    stat: "350+ solved",
+    stat: "200+ solved",
   },
   {
     name: "GeeksforGeeks",
@@ -351,12 +351,12 @@ function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 2, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-xs font-medium text-[#1e3a5f] mb-6"
+            transition={{ duration: 1, repeat: Infinity }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-sm font-medium text-[#1e3a5f] mb-6"
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
             Available for opportunities
           </motion.div>
 
@@ -368,7 +368,7 @@ function Hero() {
           </h1>
 
           <p className="mt-5 text-lg md:text-xl text-[#1e3a5f]/80 font-medium">
-            Full-Stack Developer · MERN Stack · AI Enthusiast
+            Full-Stack AI Developer & MERN Enthusiast
           </p>
           <p className="mt-4 max-w-xl text-[#1e3a5f]/70 leading-relaxed">
            Final-year B.Tech student at IIIT Bhubaneswar, passionate about transforming ideas into production-grade software through full-stack development,
@@ -435,8 +435,8 @@ function Hero() {
             <div className="absolute -inset-8 rounded-full bg-white/40 blur-2xl" />
             <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-white/70 via-[#C7E6F7]/60 to-[#7FC6E8]/40 blur-xl" />
 
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden glow-ring bg-gradient-to-br from-[#C7E6F7] to-[#7FC6E8]">
-              {/* Replace /profile.jpg with your photo */}
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-lg overflow-hidden glow-ring bg-gradient-to-br from-[#C7E6F7] to-[#7FC6E8]">
+              
               <img
                 src="/profile.jpg"
                 alt="Nikhil Sunda"
@@ -447,24 +447,24 @@ function Hero() {
             {/* floating chips */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
+              transition={{ duration: 1, repeat: Infinity }}
               className="absolute -top-4 -left-4 glass px-3 py-2 rounded-2xl text-xs font-semibold text-[#1e3a5f] flex items-center gap-1.5"
             >
               <Code2 className="w-3.5 h-3.5" /> MERN
             </motion.div>
             <motion.div
               animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+              transition={{ duration: 2, repeat: Infinity, delay: 1 }}
               className="absolute -bottom-2 -right-4 glass px-3 py-2 rounded-2xl text-xs font-semibold text-[#1e3a5f] flex items-center gap-1.5"
             >
               <Brain className="w-3.5 h-3.5" /> AI / ML
             </motion.div>
             <motion.div
               animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, delay: 2 }}
+              transition={{ duration: 3, repeat: Infinity, delay: 2 }}
               className="absolute top-1/2 -right-10 glass px-3 py-2 rounded-2xl text-xs font-semibold text-[#1e3a5f] flex items-center gap-1.5"
             >
-              <Rocket className="w-3.5 h-3.5" /> Builder
+              <Rocket className="w-3.5 h-3.5" /> Developer
             </motion.div>
           </div>
         </motion.div>
@@ -491,7 +491,7 @@ function SectionHeader({
       transition={{ duration: 0.6 }}
       className="text-center mb-12"
     >
-      <p className="text-xs font-mono uppercase tracking-[0.25em] text-[#2c6fa3] mb-3">
+      <p className="text-sm font-timesnewroman uppercase tracking-[0.25em] text-[#0d0e0f] mb-3">
         {kicker}
       </p>
       <h2
