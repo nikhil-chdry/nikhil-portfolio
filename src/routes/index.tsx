@@ -7,6 +7,7 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { sendContactMessage } from "@/lib/api/contact.functions";
 import {
   Github,
   Linkedin,
@@ -32,22 +33,23 @@ import {
   Server,
   GitBranch,
   FileCode2,
+  Cog,
+  BrainCog,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nikhil Sunda — Full-Stack & MERN Developer" },
-      {
-        name: "description",
-        content:
-          "Premium portfolio of Nikhil Sunda — Full-Stack & MERN developer, AI enthusiast, B.Tech IIIT Bhubaneswar.",
-      },
-      { property: "og:title", content: "Nikhil Sunda — Portfolio" },
-      {
-        property: "og:description",
-        content: "Full-stack, MERN & AI projects.",
-      },
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "Nikhil App" },
+      { name: "description", content: "Nikhil's Personal Portfolio" },
+      { name: "author", content: "Nikhil" },
+      { property: "og:title", content: "Nikhil App" },
+      { property: "og:description", content: "Nikhil's Personal Portfolio" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@nikhil" },
     ],
   }),
   component: Portfolio,
@@ -75,7 +77,9 @@ const SKILLS = [
   { name: "CSS3", level: 90, icon: Globe },
   { name: "Python", level: 80, icon: Brain },
   { name: "Git & GitHub", level: 85, icon: GitBranch },
-  { name: "C / C++", level: 82, icon: Cpu },
+  { name: "Deep Learning", level: 85, icon: Cpu },
+  { name: "Machine Learning", level: 85, icon: Brain },
+  {name:"Scikit-learn", level: 80, icon: BrainCog},
 ];
 
 const PROJECTS = [
@@ -145,6 +149,25 @@ const CERTIFICATES = [
     date: "2024",
     emoji: "📄",
   },
+   {
+    title: "Data Base Management System",
+    org: "CORE",
+    date: "2026",
+    emoji: "🗄️",
+  },
+    {
+    title: "Operating System",
+    org: "CORE",
+    date: "2026",
+    emoji: "🖥️",
+  },
+    {
+    title: "Computer Networks",
+    org: "CORE",
+    date: "2026",
+    emoji: "🌐",
+  },
+
 ];
 
 const ACHIEVEMENTS = [
@@ -581,7 +604,7 @@ function Skills() {
               className="glass p-5 group"
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-white/70 grid place-items-center text-[#2c6fa3] group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 rounded-xl bg-white/70 grid place-items-center text-[#3241c7] group-hover:scale-110 transition-transform">
                   <s.icon className="w-5 h-5" />
                 </div>
                 <div>
@@ -601,7 +624,7 @@ function Skills() {
                     delay: 0.2 + i * 0.05,
                     ease: "easeOut",
                   }}
-                  className="h-full bg-gradient-to-r from-[#2c6fa3] to-[#7FC6E8] rounded-full"
+                  className="h-full bg-gradient-to-r from-[#f58a42] to-[#c78b32] rounded-full"
                 />
               </div>
             </motion.div>
@@ -765,8 +788,8 @@ function Certificates() {
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           kicker="04 · Certificates"
-          title="Continuous learning"
-          subtitle="Tap a certificate to preview. Easily add more by editing the CERTIFICATES list."
+          title="Subject mastery & achievements"
+          subtitle="A showcase of certifications and milestones that highlight my commitment to learning and excellence."
         />
         <HScroller ariaLabel="Certificates">
           {CERTIFICATES.map((c, i) => (
@@ -953,10 +976,14 @@ function Contact() {
       return;
     }
     setState("loading");
-    // Simulate backend round-trip. Wire this to your Node/Express + MongoDB endpoint when ready.
-    await new Promise((r) => setTimeout(r, 900));
-    setState("success");
-    setForm({ name: "", email: "", subject: "", message: "" });
+    try {
+      await sendContactMessage({ data: form });
+      setState("success");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      setState("error");
+      setError("Something went wrong. Please try again or email me directly.");
+    }
     setTimeout(() => setState("idle"), 4000);
   };
 
@@ -1134,13 +1161,13 @@ function Field({
 function Footer() {
   return (
     <footer className="relative px-5 md:px-8 pb-10">
-      <div className="max-w-7xl mx-auto glass px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#1e3a5f]/70">
+      <div className="max-w-7xl mx-auto glass px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#1e3a5f]/80">
         <p>
           © {new Date().getFullYear()} Nikhil Sunda · Designed & built with
           care.
         </p>
-        <p className="font-mono">
-          Crafted with React · Framer Motion · Tailwind
+        <p className="font-medium text-[#1e3a5f]/80">
+          Crafted with React, Framer Motion, Tailwind CSS and a lot of ☕
         </p>
       </div>
     </footer>

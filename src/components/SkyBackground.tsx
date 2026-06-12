@@ -1,17 +1,21 @@
-import { useMemo } from "react";
+import { useLayoutEffect, useState } from "react";
 
 export function SkyBackground() {
-  const birds = useMemo(
-    () =>
+  const [birds, setBirds] = useState<Array<{ id: number; top: number; delay: number; duration: number; scale: number }> | null>(null);
+
+  useLayoutEffect(() => {
+    setBirds(
       Array.from({ length: 4 }, (_, i) => ({
         id: i,
         top: 15 + Math.random() * 50,
         delay: i * 7 + Math.random() * 8,
         duration: 28 + Math.random() * 14,
         scale: 0.6 + Math.random() * 0.7,
-      })),
-    [],
-  );
+      }))
+    );
+  }, []);
+
+  if (!birds) return null;
 
   return (
     <div className="sky-stage" aria-hidden="true">
