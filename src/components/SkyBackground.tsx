@@ -1,7 +1,13 @@
 import { useLayoutEffect, useState } from "react";
 
 export function SkyBackground() {
-  const [birds, setBirds] = useState<Array<{ id: number; top: number; delay: number; duration: number; scale: number }> | null>(null);
+  const [birds, setBirds] = useState<Array<{
+    id: number;
+    top: number;
+    delay: number;
+    duration: number;
+    scale: number;
+  }> | null>(null);
 
   useLayoutEffect(() => {
     setBirds(
@@ -11,7 +17,7 @@ export function SkyBackground() {
         delay: i * 7 + Math.random() * 8,
         duration: 28 + Math.random() * 14,
         scale: 0.6 + Math.random() * 0.7,
-      }))
+      })),
     );
   }, []);
 

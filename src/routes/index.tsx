@@ -79,7 +79,7 @@ const SKILLS = [
   { name: "Git & GitHub", level: 85, icon: GitBranch },
   { name: "Deep Learning", level: 85, icon: Cpu },
   { name: "Machine Learning", level: 85, icon: Brain },
-  {name:"Scikit-learn", level: 80, icon: BrainCog},
+  { name: "Scikit-learn", level: 80, icon: BrainCog },
 ];
 
 const PROJECTS = [
@@ -122,7 +122,7 @@ const PROJECTS = [
   {
     title: "Razor Pay Site Clone",
     desc: "Frontend clone of the Razor Pay website with responsive design and interactive elements using Tailwind CSS.",
-    stack: [ "HTML", "Tailwind CSS"],
+    stack: ["HTML", "Tailwind CSS"],
     github: "https://github.com/nikhil-chdry",
     live: "#",
     gradient: "from-[#A9DCF1] to-[#C7E6F7]",
@@ -149,25 +149,24 @@ const CERTIFICATES = [
     date: "2024",
     emoji: "📄",
   },
-   {
+  {
     title: "Data Base Management System",
     org: "CORE",
     date: "2026",
     emoji: "🗄️",
   },
-    {
+  {
     title: "Operating System",
     org: "CORE",
     date: "2026",
     emoji: "🖥️",
   },
-    {
+  {
     title: "Computer Networks",
     org: "CORE",
     date: "2026",
     emoji: "🌐",
   },
-
 ];
 
 const ACHIEVEMENTS = [
@@ -383,9 +382,7 @@ function Hero() {
             Available for opportunities
           </motion.div>
 
-          <h1
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] archivo-black-regular"
-          >
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] archivo-black-regular">
             <span className="block text-[#1e3a5f]">Hi, I'm</span>
             <span className="block text-gradient">Nikhil Sunda</span>
           </h1>
@@ -394,8 +391,11 @@ function Hero() {
             Full-Stack AI Developer & MERN Enthusiast
           </p>
           <p className="mt-4 max-w-xl text-[#1e3a5f]/70 leading-relaxed">
-           Final-year B.Tech student at IIIT Bhubaneswar, passionate about transforming ideas into production-grade software through full-stack development,
-            AI/ML engineering, and modern backend architectures, with experience in building recommendation systems, business platforms, and intelligent applications.
+            Final-year B.Tech student at IIIT Bhubaneswar, passionate about
+            transforming ideas into production-grade software through full-stack
+            development, AI/ML engineering, and modern backend architectures,
+            with experience in building recommendation systems, business
+            platforms, and intelligent applications.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -459,7 +459,6 @@ function Hero() {
             <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-white/70 via-[#C7E6F7]/60 to-[#7FC6E8]/40 blur-xl" />
 
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-lg overflow-hidden glow-ring bg-gradient-to-br from-[#C7E6F7] to-[#7FC6E8]">
-              
               <img
                 src="/profile.jpg"
                 alt="Nikhil Sunda"
@@ -517,9 +516,7 @@ function SectionHeader({
       <p className="text-sm font-timesnewroman uppercase tracking-[0.25em] text-[#0d0e0f] mb-3">
         {kicker}
       </p>
-      <h2
-        className="text-3xl md:text-5xl font-extrabold text-[#1e3a5f] tracking-tight archivo-black-regular"
-      >
+      <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e3a5f] tracking-tight archivo-black-regular">
         {title}
       </h2>
       {subtitle && (
@@ -898,9 +895,7 @@ function Achievements() {
               <div className="w-12 h-12 mx-auto rounded-2xl bg-white/70 grid place-items-center text-[#2c6fa3] mb-3">
                 <a.icon className="w-5 h-5" />
               </div>
-              <p
-                className="text-4xl font-extrabold text-gradient archivo-black-regular"
-              >
+              <p className="text-4xl font-extrabold text-gradient archivo-black-regular">
                 <Counter to={a.value} />
               </p>
               <p className="text-sm text-[#1e3a5f]/70 mt-1">{a.label}</p>

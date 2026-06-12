@@ -9,7 +9,7 @@ const contactSchema = z.object({
 });
 
 export const sendContactMessage = createServerFn({ method: "POST" })
-  .inputValidator(contactSchema)
+  .validator(contactSchema)
   .handler(async ({ data }) => {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -20,7 +20,9 @@ export const sendContactMessage = createServerFn({ method: "POST" })
       body: JSON.stringify({
         from: "Portfolio Contact <onboarding@resend.dev>",
         to: "nikhilsunda42@gmail.com",
-        subject: data.subject ? `Portfolio: ${data.subject}` : `New message from ${data.name}`,
+        subject: data.subject
+          ? `Portfolio: ${data.subject}`
+          : `New message from ${data.name}`,
         reply_to: data.email,
         text: `From: ${data.name} <${data.email}>\n\n${data.message}`,
       }),

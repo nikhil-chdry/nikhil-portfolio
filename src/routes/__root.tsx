@@ -80,17 +80,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   {
     head: () => ({
       meta: [
-          { charSet: "utf-8" },
-          { name: "viewport", content: "width=device-width, initial-scale=1" },
-          { title: "Nikhil App" },
-          { name: "description", content: "Nikhil's Personal Portfolio" },
-          { name: "author", content: "Nikhil" },
-          { property: "og:title", content: "Nikhil App" },
-          { property: "og:description", content: "Nikhil's Personal Portfolio" },
-          { property: "og:type", content: "website" },
-          { name: "twitter:card", content: "summary" },
-          { name: "twitter:site", content: "@nikhil" },
-        ],
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { title: "Nikhil App" },
+        { name: "description", content: "Nikhil's Personal Portfolio" },
+        { name: "author", content: "Nikhil" },
+        { property: "og:title", content: "Nikhil App" },
+        { property: "og:description", content: "Nikhil's Personal Portfolio" },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary" },
+        { name: "twitter:site", content: "@nikhil" },
+      ],
       links: [
         { rel: "stylesheet", href: appCss },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
